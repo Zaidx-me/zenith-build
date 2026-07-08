@@ -10,10 +10,11 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { name: "LinkedIn", href: "#" },
-  { name: "Dribbble", href: "#" },
-  { name: "GitHub", href: "#" },
-  { name: "Behance", href: "#" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/zenith-build" },
+  { name: "Threads", href: "https://www.threads.com/@zenith._.build" },
+  { name: "GitHub", href: "https://github.com/zaidx-me" },
+  { name: "Instagram", href: "https://www.instagram.com/zenith._.build" },
+  { name: "Facebook", href: "https://www.facebook.com/share/1GunL3sFr4/" },
 ];
 
 export default function FooterSection() {
@@ -89,10 +90,10 @@ export default function FooterSection() {
 
       <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-[#D7E2EA]/20 text-xs">
-          &copy; 2025 Zenith Build. All rights reserved.
+          &copy; 2026 Zenith Build. All rights reserved.
         </p>
         <p className="text-[#D7E2EA]/20 text-xs">
-          Crafted with purpose.
+          Crafted with purpose by <a href="https://zareen.qzz.io" className="underline hover:text-[#D7E2EA]/60 transition-colors">zaidxme</a>.
         </p>
       </div>
     </footer>

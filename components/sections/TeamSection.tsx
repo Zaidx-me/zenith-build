@@ -5,10 +5,10 @@ import { ArrowUpRight } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 
 const members = [
-  { slug: "alex-chen", name: "Alex Chen", role: "Creative Director", initials: "AC" },
-  { slug: "maya-patel", name: "Maya Patel", role: "Lead Engineer", initials: "MP" },
-  { slug: "samir-khan", name: "Samir Khan", role: "Product Designer", initials: "SK" },
-  { slug: "elena-voss", name: "Elena Voss", role: "Strategy Lead", initials: "EV" },
+  { slug: "altaf-gill", name: "Altaf Gill", role: "Marketing Manager", initials: "AC" },
+  { slug: "khalil-khan", name: "Khalil Khan", role: "Backend Engineer", initials: "KK" },
+  { slug: "muhammad-zaid", name: "Muhammad Zaid", role: "Lead Engineer", initials: "MZ" },
+  { slug: "rehman-ul-haq", name: "Rehman Ul Haq", role: "Frontend Engineer", initials: "RH" },
 ];
 
 export default function TeamSection() {
