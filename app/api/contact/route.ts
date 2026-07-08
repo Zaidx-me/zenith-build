@@ -32,9 +32,9 @@ export async function POST(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const recipient = process.env.EMAIL;
+  const recipients = (process.env.EMAIL ?? "").split(",").map((s) => s.trim()).filter(Boolean);
 
-  if (!apiKey || !recipient) {
+  if (!apiKey || recipients.length === 0) {
     console.error("Missing RESEND_API_KEY or EMAIL");
     return Response.json({ errors: { message: "Server config error." } }, { status: 500 });
   }
@@ -51,7 +51,7 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify({
       from: "Zenith Build <onboarding@resend.dev>",
-      to: [recipient],
+      to: recipients,
       reply_to: email,
       subject: `Zenith Build — message from ${fromName || email}`,
       text: body,
