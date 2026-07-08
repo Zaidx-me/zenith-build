@@ -47,11 +47,11 @@ export default function ProjectsSection() {
 
   return (
     <section id="work" className="px-6 md:px-10 py-24 md:py-32">
-      <FadeIn y={30} className="mb-16 md:mb-20">
+      <FadeIn y={30} className="text-center mb-16 md:mb-20">
         <span className="section-label">
           OUR WORK
         </span>
-        <h2 className="section-heading mt-4 mb-16 md:mb-20">
+        <h2 className="section-heading mt-4">
           Projects
         </h2>
       </FadeIn>

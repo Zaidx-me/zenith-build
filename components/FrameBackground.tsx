@@ -28,7 +28,7 @@ export default function FrameBackground() {
       const index = i;
       img.onload = () => {
         if (index === 1 || index === wanted) {
-          ctx.drawImage(img, 0, 0, w, h);
+          c.drawImage(img, 0, 0, w, h);
           current = index;
         }
       };
@@ -47,7 +47,7 @@ export default function FrameBackground() {
 
       const img = imgs[idx];
       if (img && img.complete) {
-        ctx.drawImage(img, 0, 0, w, h);
+        c.drawImage(img, 0, 0, w, h);
         current = idx;
       }
     }
