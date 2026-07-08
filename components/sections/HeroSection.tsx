@@ -15,7 +15,7 @@ export default function HeroSection() {
   const words = ["ZENITH", "BUILD"];
 
   return (
-    <section className="h-screen flex flex-col overflow-x-clip relative">
+    <section className="h-dvh flex flex-col overflow-x-clip relative">
 
       {/* Center content */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 md:px-10 relative z-10">
