@@ -1,4 +1,4 @@
-import SplineBackground from "@/components/SplineBackground";
+import FrameBackground from "@/components/FrameBackground";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
@@ -12,7 +12,7 @@ import FooterSection from "@/components/sections/FooterSection";
 export default function Home() {
   return (
     <>
-      <SplineBackground />
+      <FrameBackground />
       <div className="relative z-[2] overflow-x-clip">
         <HeroSection />
         <AboutSection />

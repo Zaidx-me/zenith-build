@@ -12,7 +12,7 @@ const fadeUp = (delay: number, y: number = 30) => ({
 });
 
 export default function HeroSection() {
-  const letters = "ZENITH BUILD".split("");
+  const words = ["ZENITH", "BUILD"];
 
   return (
     <section className="h-screen flex flex-col overflow-x-clip relative">
@@ -28,20 +28,19 @@ export default function HeroSection() {
 
         <div className="overflow-visible mb-4 w-full flex justify-center">
           <motion.h1
-            className="hero-title text-center whitespace-nowrap"
+            className="hero-title text-center flex flex-col items-center"
             initial={{ opacity: 0, y: 60, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            {letters.map((char, i) => (
+            {words.map((word, i) => (
               <motion.span
-                key={i}
+                key={word}
                 initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 + i * 0.03, ease: [0.25, 0.1, 0.25, 1] }}
-                className={char === " " ? "inline-block w-[0.35em]" : "inline-block"}
+                transition={{ duration: 0.5, delay: 0.2 + i * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                {char === " " ? "\u00A0" : char}
+                {word}
               </motion.span>
             ))}
           </motion.h1>
