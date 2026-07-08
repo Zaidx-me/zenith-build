@@ -2,62 +2,61 @@
 
 import { useEffect, useRef } from "react";
 
-const frameCount = 120;
-
-const currentFrame = (index: number) =>
-  `/frames/frame_${index.toString().padStart(4, "0")}.webp`;
-
 export default function FrameBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const canvasEl = canvasRef.current;
-    if (!canvasEl) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-    const ctx = canvasEl.getContext("2d", { alpha: false });
+    const ctx = canvas.getContext("2d", { alpha: false });
     if (!ctx) return;
+    const c = ctx;
 
-    canvasEl.width = 1280;
-    canvasEl.height = 720;
+    const w = 1280;
+    const h = 720;
+    canvas.width = w;
+    canvas.height = h;
 
-    const cvs = canvasEl as HTMLCanvasElement;
-    const cctx = ctx as CanvasRenderingContext2D;
+    const imgs: HTMLImageElement[] = [];
+    let current = 0;
+    let wanted = 0;
+    let ticking = false;
 
-    const preloaded: HTMLImageElement[] = [];
+    for (let i = 1; i <= 400; i++) {
+      const img = new Image();
+      const index = i;
+      img.onload = () => {
+        if (index === 1 || index === wanted) {
+          ctx.drawImage(img, 0, 0, w, h);
+          current = index;
+        }
+      };
+      img.src = `/frames/frame_${String(i).padStart(4, "0")}.webp`;
+      imgs[i] = img;
+    }
 
-    function preloadRest() {
-      for (let i = 2; i <= frameCount; i++) {
-        const img = new Image();
-        img.src = currentFrame(i);
-        preloaded[i] = img;
+    function render() {
+      ticking = false;
+      const st = document.documentElement.scrollTop;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const idx = max > 0 ? Math.round(1 + (st / max) * 399) : 1;
+
+      if (idx === current) return;
+      wanted = idx;
+
+      const img = imgs[idx];
+      if (img && img.complete) {
+        ctx.drawImage(img, 0, 0, w, h);
+        current = idx;
       }
     }
 
-    const first = new Image();
-    first.src = currentFrame(1);
-    first.onload = () => {
-      cctx.drawImage(first, 0, 0, cvs.width, cvs.height);
-      preloadRest();
-    };
-    preloaded[1] = first;
-
     function onScroll() {
-      const scrollTop = document.documentElement.scrollTop;
-      const maxScrollTop =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const scrollFraction = scrollTop / maxScrollTop;
-
-      const frameIndex = Math.min(
-        frameCount - 1,
-        Math.floor(scrollFraction * frameCount)
-      );
-
-      requestAnimationFrame(() => {
-        const img = preloaded[frameIndex + 1];
-        if (img) {
-          cctx.drawImage(img, 0, 0, cvs.width, cvs.height);
-        }
-      });
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(render);
+      }
     }
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -65,9 +64,12 @@ export default function FrameBackground() {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 z-0 w-full h-full object-cover"
-    />
+    <>
+      <canvas
+        ref={canvasRef}
+        className="fixed inset-0 z-0 w-full h-full object-cover"
+      />
+      <div className="fixed inset-0 z-[1] backdrop-blur-md bg-[#0C0C0C]/[0.35] pointer-events-none" />
+    </>
   );
 }

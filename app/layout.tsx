@@ -24,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${kanit.variable} h-full antialiased`}>
       <body className="min-h-full bg-[#0C0C0C] text-[#D7E2EA]">
-        <Navbar />
-        <main>{children}</main>
+        <div className="relative z-[2] min-h-screen mx-0">
+          <Navbar />
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );
