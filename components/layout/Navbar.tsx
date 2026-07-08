@@ -164,7 +164,7 @@ export default function Navbar() {
                 Start a Project
               </a>
               <p className="mt-5 text-[10px] text-[#D7E2EA]/20 tracking-wider uppercase">
-                Zenith Build — Creative Digital Agency
+                Zenith Build
               </p>
             </div>
           </motion.div>

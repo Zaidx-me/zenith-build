@@ -19,13 +19,6 @@ export default function HeroSection() {
 
       {/* Center content */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 md:px-10 relative z-10">
-        <motion.p
-          {...fadeUp(0.1, 20)}
-          className="text-[#D7E2EA]/40 font-medium uppercase tracking-[0.35em] text-xs md:text-sm mb-6"
-        >
-          Creative Digital Agency
-        </motion.p>
-
         <div className="overflow-visible mb-4 w-full flex justify-center">
           <motion.h1
             className="hero-title text-center flex flex-col items-center"

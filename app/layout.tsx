@@ -11,7 +11,7 @@ const kanit = Kanit({
 });
 
 export const metadata: Metadata = {
-  title: "Zenith Build — Creative Digital Agency",
+  title: "Zenith Build",
   description:
     "A creative digital agency crafting bold, modern web experiences that elevate brands and push boundaries.",
 };
