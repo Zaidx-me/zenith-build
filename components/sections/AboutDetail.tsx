@@ -55,7 +55,7 @@ export default function AboutDetail() {
         <div className="grid grid-cols-2 gap-x-12 gap-y-10">
           {stats.map((s) => (
             <div key={s.label}>
-              <p className="text-4xl md:text-6xl font-display font-black text-[#141414] leading-none">
+              <p className="text-5xl md:text-6xl font-display font-black text-[#141414] leading-none">
                 {s.value}
               </p>
               <p className="text-xs uppercase tracking-widest text-black/40 mt-2 font-medium">

@@ -69,7 +69,7 @@ export default function Hero() {
           variants={stagger}
           initial="hidden"
           animate="visible"
-          className="absolute right-0 top-1/2 -translate-y-1/2 md:max-w-xs text-white/60 text-xs md:text-sm leading-relaxed hidden sm:block"
+          className="absolute right-0 top-1/2 -translate-y-1/2 max-w-[200px] md:max-w-xs text-white/60 text-xs md:text-sm leading-relaxed hidden md:block"
         >
           We craft digital experiences that blend bold creativity with strategic thinking — helping brands stand out and scale.
         </motion.p>
