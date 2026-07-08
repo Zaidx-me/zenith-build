@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { getTeamMemberBySlug, type TeamMember } from "@/lib/team-data";
+import { getTeamMemberBySlug, teamMembers, type TeamMember } from "@/lib/team-data";
 
 async function getMember(slug: string): Promise<TeamMember | null> {
   return getTeamMemberBySlug(slug) || null;
@@ -13,6 +13,10 @@ const socialIconsConfig = [
   { key: "twitter", label: "Twitter", svg: <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> },
   { key: "website", label: "Website", svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg> },
 ];
+
+export async function generateStaticParams() {
+  return teamMembers.map((m) => ({ slug: m.slug }));
+}
 
 export default async function TeamMemberPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

@@ -24,6 +24,10 @@ const fallbackProjects: Project[] = [
   { _id: "3", title: "Flow State CRM", slug: { current: "flow-state-crm" }, category: "Web App", overview: "Intelligent CRM platform designed for creative agencies to manage clients, projects, and pipeline.", challenge: "Agencies were drowning in spreadsheets and disconnected tools. They needed a unified platform tailored to creative workflows, not enterprise sales processes.", solution: "Flow State reimagines CRM for the creative industry with visual pipeline boards, integrated time tracking, and AI-powered project forecasting. Built with a modular architecture for custom workflows.", results: "Beta users reported 30% time savings on administrative tasks. 200+ agencies signed up within the first month of launch.", thumbnail: null, techStack: ["Next.js", "PostgreSQL", "Prisma", "Tailwind", "TypeScript"], teamMembers: [{ name: "Maya Patel", slug: { current: "maya-patel" }, photo: null, role: "Lead Engineer" }, { name: "Samir Khan", slug: { current: "samir-khan" }, photo: null, role: "Product Designer" }, { name: "Elena Voss", slug: { current: "elena-voss" }, photo: null, role: "Strategy Lead" }], liveUrl: "", githubUrl: "https://github.com/zaidx-me/flow-state-crm" },
 ];
 
+export async function generateStaticParams() {
+  return fallbackProjects.map((p) => ({ slug: p.slug.current }));
+}
+
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = fallbackProjects.find((p) => p.slug.current === slug) || null;

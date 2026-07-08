@@ -67,9 +67,9 @@ export default function FrameBackground() {
     <>
       <canvas
         ref={canvasRef}
-        className="fixed top-0 left-0 z-0 w-full h-svh object-cover"
+        className="fixed top-0 left-0 z-0 w-full h-lvh object-cover"
       />
-      <div className="fixed top-0 left-0 z-[1] w-full h-svh backdrop-blur-md bg-[#0C0C0C]/[0.35] pointer-events-none" />
+      <div className="fixed top-0 left-0 z-[1] w-full h-lvh backdrop-blur-md bg-[#0C0C0C]/[0.35] pointer-events-none" />
     </>
   );
 }
