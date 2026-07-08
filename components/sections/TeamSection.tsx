@@ -6,9 +6,9 @@ import FadeIn from "@/components/ui/FadeIn";
 
 const members = [
   { slug: "altaf-gill", name: "Altaf Gill", role: "Marketing Manager", initials: "AC" },
-  { slug: "khalil-khan", name: "Khalil Khan", role: "Backend Engineer", initials: "KK" },
   { slug: "muhammad-zaid", name: "Muhammad Zaid", role: "Lead Engineer", initials: "MZ" },
   { slug: "rehman-ul-haq", name: "Rehman Ul Haq", role: "Frontend Engineer", initials: "RH" },
+  { slug: "khalil-khan", name: "Khalil Khan", role: "Backend Engineer", initials: "KK" },
 ];
 
 export default function TeamSection() {

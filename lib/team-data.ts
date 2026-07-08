@@ -12,6 +12,8 @@ export interface TeamMember {
     linkedin?: string;
     twitter?: string;
     website?: string;
+    instagram?: string;
+    threads?: string;
   };
   projects: { title: string; slug: string; category: string }[];
 }
@@ -50,6 +52,7 @@ export const teamMembers: TeamMember[] = [
   socialLinks: {
     github: "https://github.com/khalilkhancodes",
     linkedin: "https://www.linkedin.com/in/khalilkhancodes/",
+    instagram: "https://instagram.com/khalilkhancodes",
   },
   projects: [
     { title: "HealthMate AI", slug: "healthmate-ai", category: "Mobile App" },
@@ -100,17 +103,19 @@ export const teamMembers: TeamMember[] = [
   {
     slug: "muhammad-zaid",
     name: "Muhammad Zaid",
-    role: "Founder & Developer",
+    role: "Lead Engineer and Founder",
     initials: "MZ",
     color: "#D7E2EA",
     bio: "Full-stack developer and designer building mobile apps, APIs, and digital experiences. Creator of Applicator, Maktaba, and Whatbot.",
     fullBio:
-      "Zaid is an Information Technology student at the University of the Punjab and the founder of Zenith Build. He builds across the full stack — from React Native mobile apps published on the Play Store to NestJS API gateways and interactive 3D web experiences.\n\nHis projects include Applicator (an AI-powered job application assistant), Maktaba (a free Urdu book reading app with 3,000+ titles), and Whatbot (an open-source WhatsApp API Gateway). He's also built a personal portfolio with Three.js 3D visuals and a Storybook component library.\n\nWhen not coding, Zaid works on UX design in Figma, experiments with C++ game development, and explores new tools to bring creative ideas to life.",
+      "Zaid is an Information Technology student at the University of the Punjab and the founder of Applicator. He builds across the full stack — from React Native mobile apps published on the Play Store to NestJS API gateways and interactive 3D web experiences.\n\nHis projects include Applicator (an AI-powered job application assistant), Maktaba (a free Urdu book reading app with 3,000+ titles), and Whatbot (an open-source WhatsApp API Gateway). He's also built a personal portfolio with Three.js 3D visuals and a Storybook component library.\n\nWhen not coding, Zaid works on UX design in Figma, experiments with C++ game development, and explores new tools to bring creative ideas to life.",
     skills: ["React Native", "NestJS", "TypeScript", "Next.js", "UI/UX Design", "Node.js", "Docker"],
     socialLinks: {
       github: "https://github.com/zaidx-me",
       linkedin: "https://linkedin.com/in/zaidx-me",
-      website: "https://zaidxme.com",
+      instagram: "https://instagram.com/zaidx_me",
+      threads: "https://threads.net/@zaidx_me",
+      website: "https://zareen.qzz.io",
     },
     projects: [
       { title: "Applicator", slug: "applicator", category: "Mobile" },

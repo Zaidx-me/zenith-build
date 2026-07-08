@@ -20,12 +20,14 @@ export default function ProcessSection() {
   return (
     <section id="process" ref={ref} className="px-6 md:px-10 py-24 md:py-32 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <span className="section-label">
-          HOW WE WORK
-        </span>
-        <h2 className="section-heading mt-4 mb-16 md:mb-20">
-          Process
-        </h2>
+        <div className="text-center">
+          <span className="section-label">
+            HOW WE WORK
+          </span>
+          <h2 className="section-heading mt-4 mb-16 md:mb-20">
+            Process
+          </h2>
+        </div>
 
         {/* Timeline bar */}
         <div className="relative h-1 bg-white/[0.06] rounded-full mb-16">
