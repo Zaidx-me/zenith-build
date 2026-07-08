@@ -30,15 +30,17 @@ export default function FooterSection() {
             A creative digital agency crafting bold, modern web experiences that elevate brands.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
-            {socialLinks.map((l) => (
-              <a
-                key={l.name}
-                href={l.href}
-                className="text-xs uppercase tracking-widest text-[#D7E2EA]/30 hover:text-[#D7E2EA]/60 transition-colors font-medium"
-              >
-                {l.name}
-              </a>
-            ))}
+              {socialLinks.map((l) => (
+                <a
+                  key={l.name}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs uppercase tracking-widest text-[#D7E2EA]/30 hover:text-[#D7E2EA]/60 transition-colors font-medium"
+                >
+                  {l.name}
+                </a>
+              ))}
           </div>
         </div>
 
@@ -93,7 +95,7 @@ export default function FooterSection() {
           &copy; 2026 Zenith Build. All rights reserved.
         </p>
         <p className="text-[#D7E2EA]/20 text-xs">
-          Crafted with purpose by <a href="https://zareen.qzz.io" className="underline hover:text-[#D7E2EA]/60 transition-colors">zaidxme</a>.
+           Crafted with purpose by <a href="https://zareen.qzz.io" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#D7E2EA]/60 transition-colors">zaidxme</a>.
         </p>
       </div>
     </footer>

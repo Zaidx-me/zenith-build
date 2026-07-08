@@ -38,24 +38,26 @@ export const teamMembers: TeamMember[] = [
     ],
   },
   {
-    slug: "maya-patel",
-    name: "Maya Patel",
-    role: "Lead Engineer",
-    initials: "MP",
-    color: "#D7E2EA",
-    bio: "Full-stack engineer specializing in high-performance web applications, scalable architectures, and developer tooling.",
-    fullBio:
-      "Maya architects the technical backbone of our most ambitious projects. With deep expertise in React, Next.js, Node.js, and cloud infrastructure, they ensure every pixel-perfect design translates into a robust, performant reality.\n\nBefore joining Zenith Build, Maya led engineering teams at two high-growth startups, scaling platforms from MVP to millions of users. They're a strong advocate for type-safe code, automated testing, and developer experience.\n\nOutside of code, Maya contributes to open-source projects and organizes local hackathons to grow the engineering community.",
-    skills: ["React/Next.js", "Node.js", "TypeScript", "Cloud Architecture", "System Design"],
-    socialLinks: {
-      github: "https://github.com/mayapatel",
-      linkedin: "https://linkedin.com/in/mayapatel",
-    },
-    projects: [
-      { title: "Vertex Dashboard", slug: "vertex-dashboard", category: "UI/UX" },
-      { title: "Flow State CRM", slug: "flow-state-crm", category: "Web App" },
-    ],
+  slug: "khalil-khan",
+  name: "Khalil Khan",
+  role: "Backend & Infrastructure Lead",
+  initials: "KK",
+  color: "#D7EAE2",
+  bio: "Software Engineer focused on backend architecture, scalable server logic, and full-stack web/mobile integration.",
+  fullBio:
+    "Khalil architects the backend and infrastructure core at ZenithBuild. Possessing a dual-capability technical profile, he specializes in executing rapid market deployments using Backend-as-a-Service (Firebase, Clerk) alongside engineering custom, highly scalable server logic using the MERN stack (MongoDB, Express.js, Node.js).\n\nAt ZenithBuild Agency, Khalil designs language-agnostic RESTful APIs, standardizing JSON protocols to ensure seamless integration across client-side React and React Native applications. He optimizes NoSQL schemas for efficient read/write operations while ensuring strict client data isolation.\n\nWith a foundational background rooted in core software engineering, Khalil regularly bridges high-performance low-level concepts in C++ with modern cloud infrastructure to build highly reliable, data-synchronized software systems.",
+  skills: ["Node.js/Express.js", "MongoDB", "Firebase/Clerk", "RESTful API Design", "C++ & Data Structures"],
+  socialLinks: {
+    github: "https://github.com/khalilkhancodes",
+    linkedin: "https://www.linkedin.com/in/khalilkhancodes/",
   },
+  projects: [
+    { title: "HealthMate AI", slug: "healthmate-ai", category: "Mobile App" },
+    { title: "ZenithBuild API Integration Layer", slug: "zenithbuild-api-integration-layer", category: "Backend" },
+    { title: "JS-Arcade", slug: "js-arcade", category: "Web App" },
+    { title: "Spotify Clone", slug: "spotify-clone", category: "Core System" },
+  ],
+},
   {
     slug: "samir-khan",
     name: "Samir Khan",
