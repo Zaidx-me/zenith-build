@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 @theme inline {
-  --font-sans: "Kanit", sans-serif;
+  --font-sans: var(--font-kanit), sans-serif;
   --color-dark: #0C0C0C;
   --color-background: #0C0C0C;
   --color-foreground: #D7E2EA;
@@ -20,10 +20,10 @@
   body {
     @apply text-foreground;
     background-color: #0C0C0C;
-    font-family: "Kanit", sans-serif;
+    font-family: var(--font-kanit), sans-serif;
   }
   html {
-    @apply scroll-smooth;
+    scroll-behavior: smooth;
   }
 }
 
@@ -36,17 +36,10 @@
     font-size: clamp(2.5rem, 10vw, 6rem);
   }
   .hero-title {
-    @apply text-[#D7E2EA] font-black uppercase leading-none tracking-tight;
-    font-size: clamp(3.5rem, 22vw, 16rem);
+    @apply text-[#D7E2EA] font-bold uppercase leading-none tracking-tight;
+    font-size: clamp(2.5rem, 15vw, 16rem);
     letter-spacing: -0.04em;
   }
-}
-
-/* Background drift animation */
-@keyframes slowDrift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -20px) scale(1.05); }
-  66% { transform: translate(-20px, 30px) scale(0.95); }
 }
 
 /* Liquid glass sheen animation */
@@ -55,58 +48,4 @@
   50% { background-position: -200% 0; }
 }
 
-@font-face {
-  font-family: "Kanit";
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/kanit/v15/nKKZ-Go6G5tXcraVGwA.woff2") format("woff2");
-}
 
-@font-face {
-  font-family: "Kanit";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/kanit/v15/nKKZ-Go6G5tXcraVGwA.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Kanit";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/kanit/v15/nKKZ-Go6G5tXcraVGwA.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Kanit";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/kanit/v15/nKKZ-Go6G5tXcraVGwA.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Kanit";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/kanit/v15/nKKZ-Go6G5tXcraVGwA.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Kanit";
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/kanit/v15/nKKZ-Go6G5tXcraVGwA.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Kanit";
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/kanit/v15/nKKZ-Go6G5tXcraVGwA.woff2") format("woff2");
-}
