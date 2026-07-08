@@ -2,6 +2,10 @@ const MAX_EMAIL_LENGTH = 512;
 const MAX_MESSAGE_LENGTH = 4096;
 const EMAIL_REGEX = /(.+)@(.+){2,}\.(.+){2,}/;
 
+function esc(s: string) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 export async function POST(request: Request) {
   const formData = await request.formData();
   const isBot = String(formData.get("name") ?? "");
@@ -39,9 +43,35 @@ export async function POST(request: Request) {
     return Response.json({ errors: { message: "Server config error." } }, { status: 500 });
   }
 
-  const body = subject
-    ? `From: ${fromName} (${email})\nSubject: ${subject}\n\n${message}`
-    : `From: ${fromName} (${email})\n\n${message}`;
+  const date = new Date().toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+
+  const textBody = [
+    subject ? `Subject: ${subject}` : "",
+    `From: ${fromName} (${email})`,
+    `Date: ${date}`,
+    "",
+    message,
+    "",
+    "—",
+    "Zenith Build",
+    "contact@zareen.qzz.io",
+  ].filter(Boolean).join("\n");
+
+  const htmlBody = `
+<!DOCTYPE html>
+<html>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; color: #1a1a1a;">
+  <table style="max-width: 560px; margin: 0 auto; border-collapse: collapse;">
+    <tr><td style="padding-bottom: 8px; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px;">New inquiry</td></tr>
+    <tr><td style="padding-bottom: 4px; font-size: 13px; color: #888;">From</td></tr>
+    <tr><td style="padding-bottom: 16px; font-size: 16px; font-weight: 600;">${esc(fromName) || "—"} &lt;${esc(email)}&gt;</td></tr>
+    ${subject ? `<tr><td style="padding-bottom: 4px; font-size: 13px; color: #888;">Subject</td></tr><tr><td style="padding-bottom: 16px; font-size: 16px; font-weight: 600;">${esc(subject)}</td></tr>` : ""}
+    <tr><td style="padding-bottom: 4px; font-size: 13px; color: #888;">Message</td></tr>
+    <tr><td style="padding-bottom: 24px; font-size: 15px; line-height: 1.6; color: #333; white-space: pre-wrap;">${esc(message)}</td></tr>
+    <tr><td style="padding-top: 16px; border-top: 1px solid #eee; font-size: 12px; color: #999;">Zenith Build &mdash; contact@zareen.qzz.io</td></tr>
+  </table>
+</body>
+</html>`.trim();
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -50,11 +80,12 @@ export async function POST(request: Request) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Zenith Build <onboarding@resend.dev>",
+      from: "Zenith Build <contact@zareen.qzz.io>",
       to: recipients,
       reply_to: email,
-      subject: `Zenith Build — message from ${fromName || email}`,
-      text: body,
+      subject: `New inquiry from ${fromName || email}`,
+      text: textBody,
+      html: htmlBody,
     }),
   });
 
