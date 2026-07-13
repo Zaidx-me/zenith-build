@@ -3,13 +3,13 @@
 import { useState } from "react";
 import FadeIn from "@/components/ui/FadeIn";
 
-const categories = ["All", "Mobile", "API", "Web"];
+const categories = ["All", "Mobile Apps", "API", "Web "];
 
 const projects = [
   {
     id: "applicator",
     title: "Applicator",
-    cat: "Mobile",
+    cat: "Mobile Apps",
     tag: "React Native",
     desc: "AI-powered job application assistant for Android. Paste WhatsApp messages and let AI extract opportunities, generate cover letters from your CV, and open Gmail pre-filled — all on-device.",
     href: "https://applicator.netlify.app",
@@ -17,7 +17,7 @@ const projects = [
   {
     id: "maktaba",
     title: "Maktaba",
-    cat: "Mobile",
+    cat: "Mobile Apps",
     tag: "Expo",
     desc: "Free Urdu book reading app with 3,000+ local books. Fully offline with instant search, light/dark mode, personal library tracking, notes, and ratings — no sign-up required.",
     href: "https://github.com/Zaidx-me/maktaba",

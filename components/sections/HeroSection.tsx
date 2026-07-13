@@ -51,14 +51,14 @@ export default function HeroSection() {
             href="#work"
             className="rounded-full px-8 py-3 md:px-10 md:py-3.5 text-[#D7E2EA] font-medium uppercase tracking-widest text-xs sm:text-sm flex items-center gap-2 border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl hover:bg-white/[0.08] hover:border-white/[0.15] transition-all"
           >
-            View Work
+            View Our Work
             <ArrowRight className="w-4 h-4" />
           </a>
           <a
             href="#contact"
             className="rounded-full px-8 py-3 md:px-10 md:py-3.5 text-[#D7E2EA]/60 font-medium uppercase tracking-widest text-xs sm:text-sm border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl hover:bg-white/[0.06] hover:text-[#D7E2EA] transition-all"
           >
-            Get in Touch
+            Hire Our Developers
           </a>
         </motion.div>
       </div>

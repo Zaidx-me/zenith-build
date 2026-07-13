@@ -6,7 +6,6 @@ import CountUp from "@/components/ui/CountUp";
 const stats = [
   { value: 13, suffix: "+", label: "Projects" },
   { value: 3, suffix: "+", label: "Years" },
-  { value: 5, suffix: "", label: "Team" },
   { value: 7, suffix: "+", label: "Industries" },
 ];
 

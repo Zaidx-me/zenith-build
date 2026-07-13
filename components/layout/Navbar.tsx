@@ -4,11 +4,11 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { name: "Work", href: "#work" },
-  { name: "Services", href: "#services" },
-  { name: "Process", href: "#process" },
-  { name: "Studio", href: "#about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Our Work", href: "#work" },
+  { name: "Our Services", href: "#services" },
+  { name: "Process We Follow", href: "#process" },
+  { name: "About Us", href: "#about" },
+  { name: "Contact Us", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -151,7 +151,7 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="inline-flex items-center gap-2 text-xs font-semibold rounded-lg px-5 py-2.5 border border-white/[0.1] text-[#D7E2EA]/70 hover:text-[#D7E2EA] hover:border-white/[0.15] transition-all uppercase tracking-widest"
               >
-                Start a Project
+                Hire Our Developers
               </a>
               <p className="mt-5 text-[10px] text-[#D7E2EA]/20 tracking-wider uppercase">
                 Zenith Build

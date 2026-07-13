@@ -66,7 +66,7 @@ export default function ContactSection() {
       <div className="max-w-2xl mx-auto text-center">
         <FadeIn y={30}>
           <span className="section-label">
-            GET IN TOUCH
+            CONNECT WITH US
           </span>
           <h2 className="section-heading mt-4 mb-16 md:mb-20">
             Let&apos;s talk
