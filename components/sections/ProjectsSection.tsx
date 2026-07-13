@@ -24,7 +24,7 @@ const projects = [
   },
   {
     id: "whatbot",
-    title: "Whatbot",
+    title: "Whatbot - Fork of openWA",
     cat: "API",
     tag: "NestJS",
     desc: "Open-source WhatsApp API Gateway with pluggable architecture. Multi-session management, REST API, webhooks with HMAC signing, web dashboard, Swagger docs, and Docker-native deployment.",
@@ -32,7 +32,7 @@ const projects = [
   },
   {
     id: "portfolio",
-    title: "zaidxme.com",
+    title: "zaidxme - personal portfolio",
     cat: "Web",
     tag: "Remix",
     desc: "Personal design portfolio built with Remix and Three.js — 3D interactive background, Framer Motion animations, MDX articles, and a Storybook component library.",
