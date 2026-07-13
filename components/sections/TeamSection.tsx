@@ -5,15 +5,15 @@ import { ArrowUpRight } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 
 const members = [
-  { slug: "altaf-gill", name: "Altaf Gill", role: "Marketing Manager", initials: "AC" },
-  { slug: "muhammad-zaid", name: "Muhammad Zaid", role: "Lead Engineer", initials: "MZ" },
+  { slug: "altaf-gill", name: "Altaf Gill", role: "B2B Marketing Expert", initials: "AG" },
+  { slug: "muhammad-zaid", name: "Muhammad Zaid", role: "Tech Lead Engineer", initials: "MZ" },
   { slug: "rehman-ul-haq", name: "Rehman Ul Haq", role: "Frontend Engineer", initials: "RH" },
   { slug: "khalil-khan", name: "Khalil Khan", role: "Backend Engineer", initials: "KK" },
 ];
 
 export default function TeamSection() {
   return (
-    <section id="team" className="px-6 md:px-10 py-24 md:py-32">
+    <section id="team" className="px-6 md:px-10 py-20 md:py-32">
       <FadeIn y={30} className="text-center mb-16 md:mb-20">
         <span className="section-label">
           THE PEOPLE

@@ -12,7 +12,7 @@ const projects = [
     cat: "Mobile",
     tag: "React Native",
     desc: "AI-powered job application assistant for Android. Paste WhatsApp messages and let AI extract opportunities, generate cover letters from your CV, and open Gmail pre-filled — all on-device.",
-    href: "https://github.com/Zaidx-me/applicator",
+    href: "https://applicator.netlify.app",
   },
   {
     id: "maktaba",
@@ -36,7 +36,23 @@ const projects = [
     cat: "Web",
     tag: "Remix",
     desc: "Personal design portfolio built with Remix and Three.js — 3D interactive background, Framer Motion animations, MDX articles, and a Storybook component library.",
-    href: "https://github.com/Zaidx-me/portfolio",
+    href: "https://zareen.qzz.io",
+  },
+  {
+    id: "hidaya-seeker",
+    title: "Hidaya Seeker",
+    cat: "Web",
+    tag: "React & React Native",
+    desc: "A modern Islamic platform available on both web and mobile — Quran, prayer times, and essential resources in a clean, intuitive experience.",
+    href: "https://www.hidayaseeker.com/",
+  },
+  {
+    id: "mum-flooring",
+    title: "MUM Flooring Studio",
+    cat: "Web",
+    tag: "Next.js",
+    desc: "A professional flooring company website showcasing products and services, built with Next.js and optimized for customer engagement.",
+    href: "https://mumflooringstudio.co.uk/",
   },
 ];
 
@@ -46,7 +62,7 @@ export default function ProjectsSection() {
   const filtered = active === "All" ? projects : projects.filter((p) => p.cat === active);
 
   return (
-    <section id="work" className="px-6 md:px-10 py-24 md:py-32">
+    <section id="work" className="px-6 md:px-10 py-20 md:py-32">
       <FadeIn y={30} className="text-center mb-16 md:mb-20">
         <span className="section-label">
           OUR WORK

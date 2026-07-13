@@ -20,24 +20,19 @@ export interface TeamMember {
 
 export const teamMembers: TeamMember[] = [
   {
-    slug: "alex-chen",
-    name: "Alex Chen",
-    role: "Creative Director",
-    initials: "AC",
+    slug: "altaf-gill",
+    name: "Altaf Gill",
+    role: "B2B Marketing Expert",
+    initials: "AG",
     color: "#D7E2EA",
-    bio: "Visionary creative director with 12+ years of experience crafting brand identities and digital experiences that captivate audiences and drive results.",
+    bio: "Dedicated marketing expert with 2 years of experience driving B2B growth and securing high-value client partnerships in the digital landscape.",
     fullBio:
-      "Alex leads our creative vision with a relentless pursuit of originality. With a background spanning traditional design, motion graphics, and interactive media, they bring a holistic perspective to every project.\n\nOver the past decade, Alex has worked with Fortune 500 brands and emerging startups alike — always pushing the boundary of what digital experiences can achieve. Their work has been featured in Communication Arts, Awwwards, and Behance.\n\nWhen not directing creative strategy, Alex mentors emerging designers and speaks at industry conferences about the future of brand storytelling.",
-    skills: ["Creative Strategy", "Brand Identity", "Art Direction", "Motion Design", "UI/UX Vision"],
+      "As a dedicated Marketing Expert at ZenithBuild, Altaf specializes in driving B2B growth and securing high-value client partnerships. His core expertise lies in positioning mobile app development services in front of the right businesses and turning leads into long-term clients.\n\nHe brings value through client acquisition — designing targeted B2B marketing strategies and outreach funnels that consistently attract businesses looking for premium app development solutions. He elevates ZenithBuild's market presence to ensure the agency is the go-to choice for companies looking to build scalable tech products.\n\nAltaf also leads market and lead intelligence, analyzing industry demands and identifying potential corporate clients to maximize business opportunities and conversion rates. He is passionate about driving measurable business growth and helping enterprises bring their digital visions to life.",
+    skills: ["B2B Marketing", "Client Acquisition", "Brand Positioning", "Lead Intelligence", "Outreach Strategy"],
     socialLinks: {
-      linkedin: "https://linkedin.com/in/alexchen",
-      twitter: "https://twitter.com/alexchen",
-      website: "https://alexchen.design",
+      linkedin: "https://linkedin.com/in/altafgill",
     },
-    projects: [
-      { title: "Nova Brand Identity", slug: "nova-brand-identity", category: "Branding" },
-      { title: "Vertex Dashboard", slug: "vertex-dashboard", category: "UI/UX" },
-    ],
+    projects: [],
   },
   {
   slug: "khalil-khan",
@@ -62,43 +57,19 @@ export const teamMembers: TeamMember[] = [
   ],
 },
   {
-    slug: "samir-khan",
-    name: "Samir Khan",
-    role: "Product Designer",
-    initials: "SK",
+    slug: "rehman-ul-haq",
+    name: "Rehman Ul Haq",
+    role: "Front End Engineer",
+    initials: "RH",
     color: "#D7E2EA",
-    bio: "Product designer obsessed with craft, interaction design, and building interfaces that feel as good as they look.",
+    bio: "Full-stack developer building modern web and mobile applications with React, Next.js, React Native, and Node.js.",
     fullBio:
-      "Samir believes great design lives in the details. From micro-interactions to design systems, they craft cohesive product experiences that users genuinely enjoy.\n\nWith a background in both visual design and front-end development, Samir bridges the gap between design and engineering — producing work that's both beautiful and buildable. They've designed products used by millions across fintech, health, and creative tools.\n\nSamir is passionate about design tokens, component libraries, and building scalable design systems that empower teams to move fast without sacrificing quality.",
-    skills: ["Product Design", "Interaction Design", "Design Systems", "Prototyping", "User Research"],
+      "Rehman is a BS Information Technology graduate from the University of the Punjab with a passion for building modern, scalable software solutions. He specializes in full-stack development, creating responsive web applications, cross-platform mobile apps, desktop software, and secure backend systems.\n\nHe works with technologies including React, Next.js, React Native, Node.js, C#, .NET, SQL Server, and MongoDB, delivering solutions that prioritize performance, maintainability, and user experience. His experience spans business management systems, e-commerce platforms, custom APIs, and enterprise applications.\n\nBeyond software development, Rehman has a strong interest in UI/UX design, cloud deployment, SEO, and digital product development. He enjoys exploring new technologies, solving complex technical challenges, and building software that delivers meaningful value for businesses and users alike.",
+    skills: ["React.js", "Next.js", "React Native", "TypeScript", "Node.js", "C# / .NET", "SQL Server / MongoDB", "Tailwind CSS"],
     socialLinks: {
-      linkedin: "https://linkedin.com/in/samirkhan",
-      twitter: "https://twitter.com/samirkhan",
-      website: "https://samirkhan.design",
+      linkedin: "https://linkedin.com/in/rehmanulhaq",
     },
-    projects: [
-      { title: "Nova Brand Identity", slug: "nova-brand-identity", category: "Branding" },
-      { title: "Flow State CRM", slug: "flow-state-crm", category: "Web App" },
-    ],
-  },
-  {
-    slug: "elena-voss",
-    name: "Elena Voss",
-    role: "Strategy Lead",
-    initials: "EV",
-    color: "#D7E2EA",
-    bio: "Strategist who bridges business goals and creative execution, driving measurable impact through data-informed brand narratives.",
-    fullBio:
-      "Elena turns ambiguous business challenges into clear, actionable strategies. With expertise in market positioning, audience insights, and brand architecture, they ensure every creative decision is grounded in strategic intent.\n\nElena's career spans agency and in-house roles across tech, luxury, and lifestyle sectors. They've launched campaigns that drove 3× engagement growth and repositioned brands for new markets.\n\nA trained ethnographer, Elena brings deep user empathy to strategic planning — ensuring that brand strategies resonate with real people, not just spreadsheets.",
-    skills: ["Brand Strategy", "Market Research", "Positioning", "Content Strategy", "Analytics"],
-    socialLinks: {
-      linkedin: "https://linkedin.com/in/elenavoss",
-      twitter: "https://twitter.com/elenavoss",
-    },
-    projects: [
-      { title: "Flow State CRM", slug: "flow-state-crm", category: "Web App" },
-      { title: "Vertex Dashboard", slug: "vertex-dashboard", category: "UI/UX" },
-    ],
+    projects: [],
   },
   {
     slug: "muhammad-zaid",
@@ -121,6 +92,8 @@ export const teamMembers: TeamMember[] = [
       { title: "Applicator", slug: "applicator", category: "Mobile" },
       { title: "Maktaba", slug: "maktaba", category: "Mobile" },
       { title: "Whatbot", slug: "whatbot", category: "API" },
+      { title: "Hidaya Seeker", slug: "hidaya-seeker", category: "Web" },
+      { title: "MUM Flooring Studio", slug: "mum-flooring", category: "Web" },
     ],
   },
 ];

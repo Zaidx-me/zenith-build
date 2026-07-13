@@ -37,7 +37,7 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
       <div className="fixed top-[-300px] right-[-200px] w-[500px] h-[500px] rounded-full opacity-[0.03] bg-gradient-to-br from-white via-white/50 to-transparent blur-[120px] pointer-events-none" />
       <div className="fixed bottom-[-200px] left-[-200px] w-[400px] h-[400px] rounded-full opacity-[0.02] bg-gradient-to-tr from-white/60 via-white/30 to-transparent blur-[100px] pointer-events-none" />
 
-      <div className="relative z-[2] px-6 md:px-10 py-24 md:py-32 max-w-4xl mx-auto">
+      <div className="relative z-[2] px-6 md:px-10 py-20 md:py-32 max-w-4xl mx-auto">
         {/* Back link */}
         <Link
           href="/#team"

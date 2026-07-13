@@ -18,7 +18,7 @@ export default function ProcessSection() {
   const lineScale = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
 
   return (
-    <section id="process" ref={ref} className="px-6 md:px-10 py-24 md:py-32 overflow-hidden">
+    <section id="process" ref={ref} className="px-6 md:px-10 py-20 md:py-32 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center">
           <span className="section-label">

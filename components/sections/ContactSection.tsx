@@ -37,7 +37,7 @@ export default function ContactSection() {
 
   if (sent) {
     return (
-      <section id="contact" className="px-6 md:px-10 py-24 md:py-32">
+      <section id="contact" className="px-6 md:px-10 py-20 md:py-32">
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn y={20}>
             <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl">
@@ -62,7 +62,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="px-6 md:px-10 py-24 md:py-32">
+    <section id="contact" className="px-6 md:px-10 py-20 md:py-32">
       <div className="max-w-2xl mx-auto text-center">
         <FadeIn y={30}>
           <span className="section-label">

@@ -46,7 +46,7 @@ export default function HeroSection() {
           We craft digital experiences that blend bold creativity with strategic thinking.
         </motion.p>
 
-        <motion.div {...fadeUp(0.8, 20)} className="flex items-center gap-4 mt-10">
+        <motion.div {...fadeUp(0.8, 20)} className="flex items-center justify-center gap-4 mt-10 flex-wrap">
           <a
             href="#work"
             className="rounded-full px-8 py-3 md:px-10 md:py-3.5 text-[#D7E2EA] font-medium uppercase tracking-widest text-xs sm:text-sm flex items-center gap-2 border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl hover:bg-white/[0.08] hover:border-white/[0.15] transition-all"

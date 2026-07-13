@@ -15,7 +15,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="px-6 md:px-10 py-24 md:py-32">
+    <section id="services" className="px-6 md:px-10 py-20 md:py-32">
       <FadeIn y={30} className="text-center mb-16 md:mb-20">
         <span className="section-label">
           WHAT WE DO

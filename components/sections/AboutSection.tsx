@@ -12,7 +12,7 @@ const stats = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="px-6 md:px-10 py-24 md:py-32">
+    <section id="about" className="px-6 md:px-10 py-20 md:py-32">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
         {/* Left */}
         <FadeIn x={-40}>
@@ -35,7 +35,7 @@ export default function AboutSection() {
 
         {/* Right — Stats */}
         <FadeIn x={40}>
-          <div className="grid grid-cols-2 gap-x-12 gap-y-10">
+          <div className="grid grid-cols-2 gap-x-8 md:gap-x-12 gap-y-8 md:gap-y-10">
             {stats.map((s) => (
               <div key={s.label}>
                 <span className="text-[#D7E2EA] font-black leading-none text-5xl md:text-6xl lg:text-7xl">
