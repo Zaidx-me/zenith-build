@@ -52,16 +52,8 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 h-16 md:h-20">
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-7 h-7 rounded-[9px] border border-white/[0.12] bg-white/[0.03] flex items-center justify-center group-hover:border-white/[0.2] transition-all">
-              <svg viewBox="0 0 16 16" fill="none" className="w-3.5 h-3.5">
-                <path d="M8 1L14 5V11L8 15L2 11V5L8 1Z" stroke="#D7E2EA" strokeWidth="1.2" fill="none"/>
-                <circle cx="8" cy="8" r="2" fill="#D7E2EA" fillOpacity="0.3"/>
-              </svg>
-            </div>
-            <span className="text-[#D7E2EA] font-black uppercase tracking-tight text-sm md:text-base">
-              Zenith
-            </span>
+          <a href="#" className="flex items-center">
+            <img src="/logo.jpg" alt="Zenith Build" className="h-8 md:h-9 w-auto rounded-full border border-white/[0.08]" />
           </a>
 
           <div className="hidden md:flex items-center gap-1">
@@ -120,9 +112,7 @@ export default function Navbar() {
             className="fixed inset-0 z-[60] flex flex-col bg-[#0C0C0C]/[0.98] backdrop-blur-2xl"
           >
             <div className="flex items-center justify-between px-6 h-16 md:h-20">
-              <span className="text-[#D7E2EA] font-black uppercase tracking-tight text-sm">
-                Zenith
-              </span>
+              <img src="/logo.jpg" alt="Zenith Build" className="h-7 w-auto rounded-full border border-white/[0.08]" />
               <button
                 onClick={() => setMenuOpen(false)}
                 className="w-9 h-9 rounded-lg flex items-center justify-center border border-white/[0.08]"

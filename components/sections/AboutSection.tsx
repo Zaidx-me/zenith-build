@@ -4,10 +4,10 @@ import FadeIn from "@/components/ui/FadeIn";
 import CountUp from "@/components/ui/CountUp";
 
 const stats = [
-  { value: 50, suffix: "+", label: "Projects" },
-  { value: 7, suffix: "+", label: "Years" },
-  { value: 24, suffix: "", label: "Team" },
-  { value: 12, suffix: "+", label: "Industries" },
+  { value: 13, suffix: "+", label: "Projects" },
+  { value: 3, suffix: "+", label: "Years" },
+  { value: 5, suffix: "", label: "Team" },
+  { value: 7, suffix: "+", label: "Industries" },
 ];
 
 export default function AboutSection() {
