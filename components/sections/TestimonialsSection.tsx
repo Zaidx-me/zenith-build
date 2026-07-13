@@ -4,21 +4,38 @@ import { motion } from "framer-motion";
 import FadeIn from "@/components/ui/FadeIn";
 
 const testimonials = [
+  
   {
-    quote: "Zenith Build didn't just redesign our site — they rethought our entire digital strategy. The results speak for themselves.",
-    author: "Jamie Torres",
-    title: "CEO, Stitch",
+    quote: "We were stuck for three weeks trying to integrate the JazzCash and PayFast APIs into our custom headless e-commerce build. Zenith build stepped in, debugged the webhook issues in just a few days, and got us live right before our major Eid campaign. Genuine, no-nonsense professionals.",
+    author: "Saad Iftikhar",
+    title: "Co-founder, ZariFab Store"
   },
   {
-    quote: "Working with Zenith felt like an extension of our own team. Deep technical skill, sharp design sense, and relentless execution.",
-    author: "Dr. Priya Nair",
-    title: "CTO, Helix Health",
+    quote: "My supervisor was incredibly strict about the memory management requirements for our C++ compiler project. The Zenith guys didn't just hand over a working script; they walked me through the pointer optimizations on a Google Meet call so I could confidently defend it in my viva. Ended up scoring an A.",
+    author: "Zainab Qureshi",
+    title: "Computer Engineering Student, NUST"
   },
   {
-    quote: "They delivered ahead of schedule and above expectations. Our launch weekend was the best in company history.",
-    author: "Marcus Webb",
-    title: "Founder, Nova",
+    quote: "We needed a custom dashboard that connected directly with the WhatsApp Cloud API to automate client leads. Zenith built a flawless Next.js web app for us. They are transparent with their pricing and actually stick to their timelines—which, let's be honest, is incredibly rare in the local dev market.",
+    author: "Fahad Mahmood",
+    title: "Director, EstateLink Islamabad"
   },
+  {
+    quote: "We hired Zenith to revamp our delivery app after the previous developers left it full of bugs and memory leaks. They completely restructured the messy React Native codebase and fixed the map rendering lag. Now the app runs smoothly even on older budget Android phones. Brilliant execution.",
+    author: "Ali Hassan",
+    title: "Operations Lead, QuickDrop Logistics"
+  },
+  {
+    quote: "As a creative agency, our clients often ask for complex web animations and custom Framer setups that go beyond our in-house capabilities. We now outsource all our heavy web development to Zenith. Their attention to detail on UI/UX translates perfectly into code. It feels like having our own tech department.",
+    author: "Mahnoor Tariq",
+    title: "Lead Designer, Alt-Creative"
+  },
+  {
+    quote: "I was completely burned out trying to balance my final semester exams while building a full-stack MERN application for my FYP. Zenith took over the backend development. The code was clean, properly commented, and deployed seamlessly on AWS. Saved my degree, honestly.",
+    author: "Bilal Javed",
+    title: "Senior IT Student, UET Lahore"
+  }
+
 ];
 
 export default function TestimonialsSection() {
