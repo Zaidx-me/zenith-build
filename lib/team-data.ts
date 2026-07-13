@@ -69,7 +69,9 @@ export const teamMembers: TeamMember[] = [
     socialLinks: {
       linkedin: "https://linkedin.com/in/rehmanulhaq",
     },
-    projects: [],
+    projects: [
+      { title: "Hidaya Seeker", slug: "hidaya-seeker", category: "Web" },
+      { title: "MUM Flooring Studio", slug: "mum-flooring", category: "Web" },],
   },
   {
     slug: "muhammad-zaid",
@@ -84,16 +86,14 @@ export const teamMembers: TeamMember[] = [
     socialLinks: {
       github: "https://github.com/zaidx-me",
       linkedin: "https://linkedin.com/in/zaidx-me",
-      instagram: "https://instagram.com/zaidx_me",
-      threads: "https://threads.net/@zaidx_me",
+      instagram: "https://instagram.com/zaidxme",
+      threads: "https://threads.net/@zaidxme",
       website: "https://zareen.qzz.io",
     },
     projects: [
-      { title: "Applicator", slug: "applicator", category: "Mobile" },
-      { title: "Maktaba", slug: "maktaba", category: "Mobile" },
+      { title: "Applicator", slug: "applicator", category: "Mobile Apps" },
+      { title: "Maktaba", slug: "maktaba", category: "Mobile Apps" },
       { title: "Whatbot", slug: "whatbot", category: "API" },
-      { title: "Hidaya Seeker", slug: "hidaya-seeker", category: "Web" },
-      { title: "MUM Flooring Studio", slug: "mum-flooring", category: "Web" },
     ],
   },
 ];
