@@ -18,12 +18,6 @@ const socialLinks = [
   { name: "Facebook", href: "https://www.facebook.com/share/1GunL3sFr4/", icon: "fb" },
 ];
 
-const badges = [
-  { label: "BUILT WITH", value: "React.js", color: "#61dafb" },
-  { label: "STYLED WITH", value: "Tailwind CSS", color: "#38bdf8" },
-  { label: "DEPLOYED ON", value: "Vercel", color: "#fff" },
-];
-
 export default function FooterSection() {
   const [copied, setCopied] = useState(false);
 
@@ -104,23 +98,8 @@ export default function FooterSection() {
         {/* Divider */}
         <div className="h-px bg-white/[0.08] w-full" />
 
-        {/* Bottom section — badges */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8">
-          <div className="flex items-center gap-3 flex-wrap">
-            {badges.map((b) => (
-              <span
-                key={b.value}
-                className="inline-flex items-center gap-2 text-[11px] px-3 py-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] text-[#D7E2EA]/70"
-              >
-                <span className="text-[9px] text-[#D7E2EA]/30 tracking-wider uppercase font-medium">
-                  {b.label}
-                </span>
-                <span style={{ color: b.color }} className="font-medium">
-                  {b.value}
-                </span>
-              </span>
-            ))}
-          </div>
+        {/* Bottom section */}
+        <div className="flex items-center justify-between gap-4 mt-8">
           <p className="text-[#D7E2EA]/20 text-xs">
             &copy; 2026 Zenith Build. All rights reserved.
           </p>

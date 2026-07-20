@@ -29,10 +29,10 @@ export default function HeroSection() {
   const repeatedItems = [...marqueeItems, ...marqueeItems, ...marqueeItems];
 
   return (
-    <section className="min-h-svh flex flex-col overflow-x-clip relative pt-20 pb-10">
+    <section className="min-h-svh flex flex-col overflow-x-clip relative pt-[20vh] pb-4 md:pb-10">
 
       {/* Center content */}
-      <div className="flex-1 flex flex-col items-center justify-start pt-2 px-6 md:px-10 relative z-10">
+      <div className="flex flex-col items-center justify-start px-6 md:px-10 relative z-10">
         <div className="max-w-[900px] w-full">
 
           {/* Main title */}
@@ -108,8 +108,8 @@ export default function HeroSection() {
       </div>
 
       {/* Straight marquee */}
-      <FadeIn y={20} delay={1.1} className="relative z-10 mt-auto pb-6">
-        <div className="overflow-hidden py-5 [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]">
+      <FadeIn y={20} delay={1.1} className="relative z-10 mt-8">
+        <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]">
           <motion.div
             className="flex gap-12 whitespace-nowrap"
             animate={{ x: ["0%", "-33.333%"] }}
