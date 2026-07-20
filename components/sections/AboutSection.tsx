@@ -11,42 +11,47 @@ const stats = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="px-6 md:px-10 py-20 md:py-32">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-        {/* Left */}
-        <FadeIn x={-40}>
+    <section id="about" className="px-6 md:px-10 py-14 md:py-32">
+      <div className="max-w-6xl mx-auto">
+        {/* Section header */}
+        <FadeIn y={30}>
           <span className="section-label">
             ABOUT US
           </span>
           <h2 className="section-heading mt-4 mb-16 md:mb-20">
             We build
             <br />
-            digital
-            <br />
-            excellence
+            digital{" "}
+            <span className="text-[#D7E2EA]/70">excellence</span>
           </h2>
-          <p className="text-[#D7E2EA]/80 font-light leading-relaxed mt-6 max-w-md text-sm md:text-base">
-            From startups to enterprises, we craft digital products that drive
-            real business outcomes — combining deep technical expertise with
-            sharp design thinking.
-          </p>
         </FadeIn>
 
-        {/* Right — Stats */}
-        <FadeIn x={40}>
-          <div className="grid grid-cols-2 gap-x-8 md:gap-x-12 gap-y-8 md:gap-y-10">
-            {stats.map((s) => (
-              <div key={s.label}>
+        {/* Problem grid — stats + description */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 md:mb-24">
+          <FadeIn y={30} delay={0.1}>
+            <div className="h-full p-8 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl hover:bg-white/[0.08] hover:-translate-y-1 transition-all duration-300">
+              <p className="text-[#D7E2EA]/70 text-sm leading-relaxed">
+                From startups to enterprises, we craft digital products that drive
+                real business outcomes — combining deep technical expertise with
+                sharp design thinking.
+              </p>
+            </div>
+          </FadeIn>
+
+          {stats.map((s, i) => (
+            <FadeIn key={s.label} y={30} delay={0.15 + i * 0.1}>
+              <div className="h-full p-8 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl hover:bg-white/[0.08] hover:-translate-y-1 transition-all duration-300">
+                <span className="block text-[#D7E2EA]/50 text-xs uppercase tracking-[0.15em] font-medium mb-4">
+                  {s.label}
+                </span>
                 <span className="text-[#D7E2EA] font-black leading-none text-5xl md:text-6xl lg:text-7xl">
                   <CountUp end={s.value} suffix={s.suffix} />
                 </span>
-                <p className="text-[#D7E2EA]/40 text-xs uppercase tracking-widest mt-2 font-medium">
-                  {s.label}
-                </p>
               </div>
-            ))}
-          </div>
-        </FadeIn>
+            </FadeIn>
+          ))}
+        </div>
+
       </div>
     </section>
   );

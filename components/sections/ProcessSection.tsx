@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Folder from "@/components/ui/Folder";
 
 const steps = [
   { num: "01", title: "Discover", desc: "We immerse in your business — goals, audience, competition, and constraints to define the strategy." },
@@ -12,13 +13,15 @@ const steps = [
   { num: "06", title: "Grow", desc: "Data-driven optimization and iterative feature development to scale what works." },
 ];
 
+const folderColors = ["#D7E2EA", "#a0aab4", "#8896a4", "#D7E2EA", "#a0aab4", "#8896a4"];
+
 export default function ProcessSection() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const lineScale = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
 
   return (
-    <section id="process" ref={ref} className="px-6 md:px-10 py-20 md:py-32 overflow-hidden">
+    <section id="process" ref={ref} className="px-6 md:px-10 py-14 md:py-32">
       <div className="max-w-6xl mx-auto">
         <div className="text-center">
           <span className="section-label">
@@ -37,8 +40,10 @@ export default function ProcessSection() {
           />
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8">
+        {/* Steps grid */}
+        <div
+          className="grid grid-cols-2 lg:grid-cols-3 mt-16 md:mt-20 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-10 lg:gap-12"
+        >
           {steps.map((s, i) => (
             <motion.div
               key={s.num}
@@ -46,12 +51,32 @@ export default function ProcessSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.12, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="flex flex-col items-center text-center min-w-0 w-[140px] sm:w-[160px] lg:w-auto"
             >
-              <span className="text-[#D7E2EA] font-black text-4xl md:text-5xl leading-none">
+              <div className="mb-3 md:mb-4 mt-4 sm:mt-6 flex justify-center w-full">
+                <div className="scale-[0.8] sm:scale-100 lg:scale-110">
+                <Folder
+                  size={1.4}
+                  color={folderColors[i]}
+                  items={[
+                    <div key="p1" className="w-full h-full flex items-center justify-center p-2">
+                      <span className="text-[10px] font-bold text-gray-800">{s.num}</span>
+                    </div>,
+                    <div key="p2" className="w-full h-full flex items-center justify-center p-2">
+                      <span className="text-[9px] font-semibold text-gray-700">{s.title}</span>
+                    </div>,
+                    <div key="p3" className="w-full h-full flex items-center justify-center p-1">
+                      <span className="text-[7px] text-gray-600 leading-tight text-center">{s.desc}</span>
+                    </div>,
+                  ]}
+                />
+                </div>
+              </div>
+              <span className="text-[#D7E2EA] font-black text-lg md:text-3xl leading-none mt-1">
                 {s.num}
               </span>
-              <h3 className="text-[#D7E2EA] font-semibold text-base mt-3 mb-2">{s.title}</h3>
-              <p className="text-[#D7E2EA]/60 text-sm leading-relaxed">{s.desc}</p>
+              <h3 className="text-[#D7E2EA] font-semibold text-xs md:text-sm mt-1.5">{s.title}</h3>
+              <p className="text-[#D7E2EA]/50 text-[10px] md:text-xs leading-relaxed mt-1 hidden md:block">{s.desc}</p>
             </motion.div>
           ))}
         </div>

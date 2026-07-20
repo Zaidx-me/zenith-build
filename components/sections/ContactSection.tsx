@@ -1,14 +1,30 @@
 "use client";
 
-import { useState, FormEvent } from "react";
-import { Send, Check, Loader } from "lucide-react";
+import { useState, FormEvent, useRef, useEffect } from "react";
+import { Send, Check, Loader, Mail, MapPin } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
-import GlassCard from "@/components/ui/GlassCard";
 
 export default function ContactSection() {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = section.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      section.style.setProperty("--mouse-x", `${x}%`);
+      section.style.setProperty("--mouse-y", `${y}%`);
+    };
+
+    section.addEventListener("mousemove", handleMouseMove);
+    return () => section.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -37,8 +53,9 @@ export default function ContactSection() {
 
   if (sent) {
     return (
-      <section id="contact" className="px-6 md:px-10 py-20 md:py-32">
-        <div className="max-w-2xl mx-auto text-center">
+      <section id="contact" ref={sectionRef} className="relative px-6 md:px-10 py-14 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(600px_circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(215,226,234,0.03),transparent_40%)] pointer-events-none" />
+        <div className="max-w-6xl mx-auto text-center relative z-10">
           <FadeIn y={20}>
             <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl">
               <Check className="w-6 h-6 text-[#D7E2EA]" />
@@ -62,74 +79,102 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="px-6 md:px-10 py-20 md:py-32">
-      <div className="max-w-2xl mx-auto text-center">
-        <FadeIn y={30}>
-          <span className="section-label">
-            CONNECT WITH US
-          </span>
-          <h2 className="section-heading mt-4 mb-16 md:mb-20">
-            Let&apos;s talk
-          </h2>
+    <section id="contact" ref={sectionRef} className="relative px-6 md:px-10 py-14 md:py-32 overflow-hidden">
+      {/* Mouse spotlight */}
+      <div className="absolute inset-0 bg-[radial-gradient(600px_circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(215,226,234,0.03),transparent_40%)] pointer-events-none" />
 
-          <GlassCard className="p-8 text-left">
-            <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-              <input type="text" name="name" autoComplete="off" tabIndex={-1} className="absolute opacity-0 pointer-events-none" />
+      {/* Accent top line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D7E2EA]/10 to-transparent" />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-12 md:gap-16 items-start">
+          {/* Left — Info (sticky on desktop) */}
+          <FadeIn x={-30} className="md:sticky md:top-24">
+            <span className="section-label">
+              CONNECT WITH US
+            </span>
+            <h2 className="section-heading mt-4 mb-6">
+              Let&apos;s talk
+            </h2>
+            <p className="text-[#D7E2EA]/60 text-sm md:text-base leading-relaxed mb-8 max-w-md">
+              Ready to start your next project? Fill out the form and we&apos;ll get back to you within a couple of days.
+            </p>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-3 text-sm text-[#D7E2EA]/60">
+                <Mail className="w-4 h-4 text-[#D7E2EA]/50" />
+                <span>contact@zenithbuild.com</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-[#D7E2EA]/60">
+                <MapPin className="w-4 h-4 text-[#D7E2EA]/50" />
+                <span>Remote / On-site</span>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Right — Form */}
+          <FadeIn x={30} delay={0.1}>
+            <div className="relative rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl p-8">
+              {/* Accent top border */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#D7E2EA]/10 rounded-t-2xl" />
+
+              <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+                <input type="text" name="name" autoComplete="off" tabIndex={-1} className="absolute opacity-0 pointer-events-none" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <input
+                    type="text"
+                    name="fromName"
+                    placeholder="Name"
+                    required
+                    className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm text-[#D7E2EA] placeholder:text-[#D7E2EA]/30 outline-none focus:border-[#D7E2EA]/30 transition-colors"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    required
+                    className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm text-[#D7E2EA] placeholder:text-[#D7E2EA]/30 outline-none focus:border-[#D7E2EA]/30 transition-colors"
+                  />
+                </div>
                 <input
                   type="text"
-                  name="fromName"
-                  placeholder="Name"
-                  required
-                  className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm text-[#D7E2EA] placeholder:text-[#D7E2EA]/30 outline-none focus:border-white/[0.15] transition-colors"
+                  name="subject"
+                  placeholder="Subject"
+                  className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm text-[#D7E2EA] placeholder:text-[#D7E2EA]/30 outline-none focus:border-[#D7E2EA]/30 transition-colors"
                 />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
+                <textarea
+                  name="message"
+                  rows={5}
+                  placeholder="Message"
                   required
-                  className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm text-[#D7E2EA] placeholder:text-[#D7E2EA]/30 outline-none focus:border-white/[0.15] transition-colors"
+                  className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm text-[#D7E2EA] placeholder:text-[#D7E2EA]/30 outline-none focus:border-[#D7E2EA]/30 transition-colors resize-none"
                 />
-              </div>
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm text-[#D7E2EA] placeholder:text-[#D7E2EA]/30 outline-none focus:border-white/[0.15] transition-colors"
-              />
-              <textarea
-                name="message"
-                rows={5}
-                placeholder="Message"
-                required
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-sm text-[#D7E2EA] placeholder:text-[#D7E2EA]/30 outline-none focus:border-white/[0.15] transition-colors resize-none"
-              />
 
-              {error && (
-                <p className="text-xs text-red-400/80 tracking-wide">{error}</p>
-              )}
-
-              <button
-                type="submit"
-                disabled={sending}
-                className="self-start rounded-full px-8 py-3 font-medium uppercase tracking-widest text-xs sm:text-sm flex items-center gap-2 border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl text-[#D7E2EA] hover:bg-white/[0.08] hover:border-white/[0.15] transition-all disabled:opacity-50"
-              >
-                {sending ? (
-                  <>
-                    <Loader className="w-3.5 h-3.5 animate-spin" />
-                    Sending
-                  </>
-                ) : (
-                  <>
-                    Send Message
-                    <Send className="w-3.5 h-3.5" />
-                  </>
+                {error && (
+                  <p className="text-xs text-red-400/80 tracking-wide">{error}</p>
                 )}
-              </button>
-            </form>
-          </GlassCard>
-        </FadeIn>
+
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className="self-start rounded-full px-8 py-3 font-medium uppercase tracking-widest text-xs sm:text-sm flex items-center gap-2 bg-[#D7E2EA] text-[#0C0C0C] hover:bg-[#D7E2EA]/90 transition-all disabled:opacity-50"
+                >
+                  {sending ? (
+                    <>
+                      <Loader className="w-3.5 h-3.5 animate-spin" />
+                      Sending
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="w-3.5 h-3.5" />
+                    </>
+                  )}
+                </button>
+              </form>
+            </div>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

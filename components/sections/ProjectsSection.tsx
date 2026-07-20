@@ -62,7 +62,7 @@ export default function ProjectsSection() {
   const filtered = active === "All" ? projects : projects.filter((p) => p.cat === active);
 
   return (
-    <section id="work" className="px-6 md:px-10 py-20 md:py-32">
+    <section id="work" className="px-6 md:px-10 py-14 md:py-32">
       <FadeIn y={30} className="text-center mb-16 md:mb-20">
         <span className="section-label">
           OUR WORK

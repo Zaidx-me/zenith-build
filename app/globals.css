@@ -15,7 +15,7 @@ html, body {
   --color-foreground: #D7E2EA;
   --color-border: rgba(215, 226, 234, 0.15);
   --color-input: #0C0C0C;
-  --color-ring: #19B64F;
+  --color-ring: #D7E2EA;
 }
 
 @layer base {
@@ -49,10 +49,44 @@ html, body {
   }
 }
 
-/* Liquid glass sheen animation */
-@keyframes sheen {
-  0%, 100% { background-position: 200% 0; }
-  50% { background-position: -200% 0; }
+/* Scroll reveal animation system */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
+@keyframes sheen {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Liquid glass surface */
+.glass-surface--svg {
+  background: hsl(0 0% 0% / 0);
+  backdrop-filter: var(--filter-id, url(#glass-filter)) saturate(var(--glass-saturation, 1));
+  box-shadow:
+    0 0 2px 1px rgba(255, 255, 255, 0.05) inset,
+    0 0 10px 4px rgba(255, 255, 255, 0.02) inset,
+    0px 4px 16px rgba(17, 17, 26, 0.05),
+    0px 8px 24px rgba(17, 17, 26, 0.05),
+    0px 16px 56px rgba(17, 17, 26, 0.05),
+    0px 4px 16px rgba(17, 17, 26, 0.05) inset,
+    0px 8px 24px rgba(17, 17, 26, 0.05) inset,
+    0px 16px 56px rgba(17, 17, 26, 0.05) inset;
+}
+
+.glass-surface--fallback {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px) saturate(1.8) brightness(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.8) brightness(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.1),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.05);
+}
